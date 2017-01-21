@@ -1,0 +1,2 @@
+mongo_db: mongodb://localhost:27017/spectra
+jwt_secret: 71j1133512355770F648631020111486

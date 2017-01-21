@@ -1,0 +1,21 @@
+INFO: 2017-01-20 22:28:16.916284: 200 GET / (0 ms)
+INFO: 2017-01-20 22:28:20.334602: 200 GET /users (0 ms)
+INFO: 2017-01-20 22:28:23.372380: 200 GET /api/users (199 ms)
+INFO: 2017-01-20 22:32:55.467560: 200 GET /api/users (39 ms)
+INFO: 2017-01-20 22:32:56.689421: 200 GET /api/users (2 ms)
+INFO: 2017-01-20 22:32:59.626714: 200 GET /api/posts (1 ms)
+INFO: 2017-01-20 22:33:06.288362: 200 GET /api/categories (1 ms)
+SEVERE: 2017-01-20 22:39:58.090482: /api/categories: Unhandled exception occurred - NoSuchMethodError: The method 'grab' was called on null.
+Receiver: null
+Tried calling: grab("user")
+SEVERE: 2017-01-20 22:39:58.091736: 
+#0      Object._noSuchMethod (dart:core-patch/object_patch.dart:44)
+#1      Object.noSuchMethod (dart:core-patch/object_patch.dart:47)
+#2      Permission.toHook.<anonymous closure>.<<anonymous closure>_async_body> (package:angel_security/src/permissions.dart:16:28)
+#3      Future.Future.microtask.<anonymous closure> (dart:async/future.dart:144)
+#4      _microtaskLoop (dart:async/schedule_microtask.dart:41)
+#5      _startMicrotaskLoop (dart:async/schedule_microtask.dart:50)
+#6      _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:96)
+#7      _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:149)
+
+INFO: 2017-01-20 22:39:58.096555: 200 GET /api/categories (17 ms)
