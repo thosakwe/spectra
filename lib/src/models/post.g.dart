@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of angel.models.post;
+part of spectra.models.post;
 
 // **************************************************************************
 // Generator: JsonSerializableGenerator

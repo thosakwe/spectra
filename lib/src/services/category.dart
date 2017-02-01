@@ -1,13 +1,9 @@
 import 'package:angel_framework/angel_framework.dart';
 import 'package:angel_mongo/angel_mongo.dart';
-import 'package:angel_security/angel_security.dart';
 import 'package:mongo_dart/mongo_dart.dart';
 import '../models/category.dart';
+import 'permissions.dart';
 export '../models/category.dart';
-
-final PermissionBuilder _admin = new PermissionBuilder('admin');
-final Permission _authorsOnly =
-    new PermissionBuilder('author').or(_admin).toPermission();
 
 configureServer(Db db) {
   return (Angel app) async {
@@ -18,11 +14,10 @@ configureServer(Db db) {
     app.container.singleton(service.inner);
 
     service
-      ..beforeIndexed.listen(_authorsOnly.toHook())
-      ..beforeCreated.listen(_authorsOnly.toHook())
-      ..beforeModified.listen(_authorsOnly.toHook())
-      ..beforeUpdated.listen(_authorsOnly.toHook())
-      ..beforeRemoved.listen(_authorsOnly.toHook());
+      ..beforeCreated.listen(AUTHORS_ONLY.toHook())
+      ..beforeModified.listen(AUTHORS_ONLY.toHook())
+      ..beforeUpdated.listen(AUTHORS_ONLY.toHook())
+      ..beforeRemoved.listen(AUTHORS_ONLY.toHook());
   };
 }
 

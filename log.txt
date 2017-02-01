@@ -19,3 +19,8 @@ SEVERE: 2017-01-20 22:39:58.091736:
 #7      _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:149)
 
 INFO: 2017-01-20 22:39:58.096555: 200 GET /api/categories (17 ms)
+INFO: 2017-02-01 18:30:18.059971: 200 GET / (0 ms)
+INFO: 2017-02-01 18:34:49.235350: 200 GET / (0 ms)
+INFO: 2017-02-01 18:35:28.354105: 200 GET / (2 ms)
+INFO: 2017-02-01 18:35:56.970178: 200 GET /api/posts (18 ms)
+INFO: 2017-02-01 18:36:15.683219: 200 GET /api/posts (2 ms)

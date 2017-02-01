@@ -17,6 +17,12 @@ Future<Angel> createServer() async {
   await app.configure(PostService.configureServer(db));
   await app.configure(UserService.configureServer(db));
 
-  await app.configure(logRequests(new File('log.txt')));
-  return app;
+  var errors = new ErrorHandler()
+    ..fatalErrorHandler = (AngelFatalError e) {
+      print('Oops: ${e.error}');
+      print(e.stack);
+    };
+
+  return app
+    ..justBeforeStart.addAll([errors, logRequests(new File('log.txt'))]);
 }
